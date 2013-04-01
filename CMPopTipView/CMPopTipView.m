@@ -349,21 +349,17 @@
         CGFloat sizeBelow = containerView.bounds.size.height - targetOriginInContainer.y;
         if (pointDirection == PointDirectionAny) {
             if (sizeBelow > targetOriginInContainer.y) {
-                pointerY = targetOriginInContainer.y + targetView.bounds.size.height;
                 pointDirection = PointDirectionUp;
             }
             else {
-                pointerY = targetOriginInContainer.y;
                 pointDirection = PointDirectionDown;
             }
         }
+        if (pointDirection == PointDirectionDown) {
+            pointerY = targetOriginInContainer.y;
+        }
         else {
-            if (pointDirection == PointDirectionDown) {
-                pointerY = targetOriginInContainer.y;
-            }
-            else {
-                pointerY = targetOriginInContainer.y + targetView.bounds.size.height;
-            }
+            pointerY = targetOriginInContainer.y + targetView.bounds.size.height;
         }
     }
     
