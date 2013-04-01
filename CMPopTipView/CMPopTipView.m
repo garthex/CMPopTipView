@@ -59,10 +59,10 @@
 - (CGRect)bubbleFrame {
 	CGRect bubbleFrame;
 	if (pointDirection == PointDirectionUp) {
-		bubbleFrame = CGRectMake(2.0, targetPoint.y+pointerSize, bubbleSize.width, bubbleSize.height);
+		bubbleFrame = CGRectMake(sidePadding, targetPoint.y+pointerSize, bubbleSize.width, bubbleSize.height);
 	}
 	else {
-		bubbleFrame = CGRectMake(2.0, targetPoint.y-pointerSize-bubbleSize.height, bubbleSize.width, bubbleSize.height);
+		bubbleFrame = CGRectMake(sidePadding, targetPoint.y-pointerSize-bubbleSize.height, bubbleSize.width, bubbleSize.height);
 	}
 	return bubbleFrame;
 }
@@ -384,6 +384,8 @@
 	if (x_p + pointerSize > x_b + bubbleSize.width - cornerRadius) {
 		x_p = x_b + bubbleSize.width - cornerRadius - pointerSize;
 	}
+    
+    x_b -= sidePadding;
 	
 	CGFloat fullHeight = bubbleSize.height + pointerSize + 10.0;
 	CGFloat y_b;
@@ -396,7 +398,7 @@
 		targetPoint = CGPointMake(x_p-x_b, fullHeight-2.0);
 	}
 	
-	CGRect finalFrame = CGRectMake(x_b-sidePadding,
+	CGRect finalFrame = CGRectMake(x_b,
 								   y_b,
 								   bubbleSize.width+sidePadding*2,
 								   fullHeight);
@@ -563,7 +565,7 @@
 		cornerRadius = 10.0;
 		topMargin = 2.0;
 		pointerSize = 12.0;
-		sidePadding = 2.0;
+		sidePadding = 5.0;
         borderWidth = 1.0;
 		
 		self.textFont = [UIFont boldSystemFontOfSize:14.0];
