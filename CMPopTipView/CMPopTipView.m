@@ -391,13 +391,13 @@
 	}
 	else {
 		y_b = pointerY - fullHeight;
-		targetPoint = CGPointMake(x_p-x_b, fullHeight-2.0);
+		targetPoint = CGPointMake(x_p-x_b, fullHeight-bottomMargin);
 	}
 	
 	CGRect finalFrame = CGRectMake(x_b,
 								   y_b,
 								   bubbleSize.width+sidePadding*2,
-								   fullHeight);
+								   fullHeight + bottomShadowExtension);
     
    	
 	if (animated) {
@@ -560,6 +560,8 @@
 		
 		cornerRadius = 10.0;
 		topMargin = 2.0;
+        bottomMargin = 2.0;
+        bottomShadowExtension = 5.0;
 		pointerSize = 12.0;
 		sidePadding = 5.0;
         borderWidth = 1.0;

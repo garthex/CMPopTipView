@@ -123,6 +123,8 @@ typedef enum {
 	BOOL					highlight;
 	CGFloat					sidePadding;
 	CGFloat					topMargin;
+	CGFloat					bottomShadowExtension;
+	CGFloat					bottomMargin;
 	PointDirection			pointDirection;
 	CGFloat					pointerSize;
 	CGPoint					targetPoint;
