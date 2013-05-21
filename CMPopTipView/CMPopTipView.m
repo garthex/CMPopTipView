@@ -71,7 +71,7 @@
 - (CGRect)contentFrame {
 	CGRect bubbleFrame = [self bubbleFrame];
 	CGRect contentFrame = CGRectMake(bubbleFrame.origin.x + cornerRadius,
-									 bubbleFrame.origin.y + cornerRadius,
+									 bubbleFrame.origin.y + fmaxf(5, cornerRadius),
 									 bubbleFrame.size.width - cornerRadius*2,
 									 bubbleFrame.size.height - cornerRadius*2);
 	return contentFrame;
@@ -324,7 +324,7 @@
                                       lineBreakMode:UILineBreakModeClip].height;
     }
     
-	bubbleSize = CGSizeMake(textSize.width + cornerRadius*2, textSize.height + cornerRadius*2);
+	bubbleSize = CGSizeMake(textSize.width + fmaxf(18, cornerRadius*2), textSize.height + fmaxf(10, cornerRadius*2));
 	
 	UIView *superview = containerView.superview;
 	if ([superview isKindOfClass:[UIWindow class]])
