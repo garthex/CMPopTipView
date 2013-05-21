@@ -116,10 +116,10 @@ typedef enum {
     UIColor                 *borderColor;
     CGFloat                 borderWidth;
     CMPopTipAnimation       animation;
+	CGFloat					cornerRadius;
 
 	@private
 	CGSize					bubbleSize;
-	CGFloat					cornerRadius;
 	BOOL					highlight;
 	CGFloat					sidePadding;
 	CGFloat					topMargin;
@@ -147,6 +147,7 @@ typedef enum {
 @property (nonatomic, retain)			UIColor					*borderColor;
 @property (nonatomic, assign)			CGFloat					borderWidth;
 @property (nonatomic, assign)           CMPopTipAnimation       animation;
+@property (nonatomic, assign)           CGFloat                 cornerRadius;
 @property (nonatomic, assign)           CGFloat                 maxWidth;
 @property (nonatomic, assign)           PointDirection          preferredPointDirection;
 

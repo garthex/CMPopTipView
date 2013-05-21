@@ -50,6 +50,7 @@
 @synthesize borderColor;
 @synthesize borderWidth;
 @synthesize animation;
+@synthesize cornerRadius;
 @synthesize maxWidth;
 @synthesize disableTapToDismiss;
 @synthesize dismissTapAnywhere;
